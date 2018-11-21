@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            function send(cb){
+                $.get("http://localhost:8765/" + cb.id + "=" + (cb.checked ? "1" : "0"));
+            }
+            function save(){
+                $.get("http://localhost:8765/save");
+            }
+        </script>
+    </head>
+    <body>
+        <input type="checkbox" id="1" onchange="send(this);">
+        <input type="button" id="1" onclick="save();">
+    </body>
+</html>
